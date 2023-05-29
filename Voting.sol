@@ -87,7 +87,7 @@ contract Voting is Ownable {
         emit WorkflowStatusChange(WorkflowStatus.VotingSessionStarted, WorkflowStatus.VotingSessionEnded);
     }
 
-    // Tallying and returning winner
+    // Tallying
     function countVotes() external onlyOwner {
         require(status == WorkflowStatus.VotingSessionEnded, "There is no ended vote");
         uint voteCounter = 0;
@@ -101,6 +101,8 @@ contract Voting is Ownable {
         emit WorkflowStatusChange(WorkflowStatus.VotingSessionEnded, WorkflowStatus.VotesTallied);
     }
 
+
+    //Get Winner and votes by voter
     function getWinner() public view returns (Proposal memory proposal) {
         require(status == WorkflowStatus.VotesTallied, "The vote is not tallied");
         proposal = proposals[winningProposalId];
