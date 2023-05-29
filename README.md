@@ -49,27 +49,22 @@ To retrieve voting-related information, the following functions can be used:
 ## Version 2
 
 1. Remove Voter
-The removeVoter function allows the administrator to remove a registered voter from the system.
+The removeVoter function allows the administrator to remove a voter.
 
-Function signature: removeVoter(address _voterAddress)
-
-Example function call: removeVoter(0x9876543210987654321098765432109876543210)
+  - Example: removeVoter(0x9876543210987654321098765432109876543210)
 
 2. Count Votes in Case of Tie with Admin's Choice
-The countVote function is used to count the votes and determine the winning proposal in case of a tie. If there is a tie, the administrator can use the adminChooseProposal function to choose the winning proposal.
+The countVote function is used to determine the winning proposal in case of tie. 
+The administrator choose the winning proposal among  the tied proposals.
 
-Function signature: countVote()
-
-Example function call: countVote()
-
-Example adminChooseProposal function call: adminChooseProposal(2)
+  - Example: adminChooseProposal(2)
 
 3. Save Session
-The saveSession function allows the administrator to save the details of the current voting session. This function is useful for keeping a record of past sessions.
+The saveSession function allows the administrator to save the current voting session. 
 
-Function signature: saveSession()
-
-Example function call: saveSession()
+- Example: saveSession()
 
 4. Get All Sessions
-The getAllSessions function retrieves information about all the past voting sessions conducted.
+The getAllSessions function retrieves information about all the past voting sessions.
+
+  - Example: getAllSessions()
